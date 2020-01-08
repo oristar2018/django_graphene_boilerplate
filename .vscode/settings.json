@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "ge/bin/python",
+    "python.linting.flake8Enabled": false,
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
+}
