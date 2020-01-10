@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '69h22a9!)qpubg(e=ajkz#f#(*r4z3)a94%y#r1v#7#fmw(^ll'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -56,8 +56,9 @@ MIDDLEWARE = [
 # CORS WHITELIST
 
 CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000"
+    os.getenv('CLIENT_HOST')
 ]
+
 
 ROOT_URLCONF = 'django_graphene.urls'
 
@@ -83,13 +84,15 @@ WSGI_APPLICATION = 'django_graphene.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'HOST': 'db',
-        'PORT': 5432,
+        'NAME': os.getenv('POSTGRES_DB'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'HOST':  os.getenv('POSTGRES_HOST'),
+        'PORT':  os.getenv('POSTGRES_PORT'),
+        'PASSWORD':  os.getenv('POSTGRES_PASSWORD')
     }
 }
 

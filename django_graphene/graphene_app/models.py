@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 
@@ -12,6 +13,7 @@ class BaseFields(models.Model):
 
 
 class ExampleResource(BaseFields):
+    id = models.UUIDField(primary_key=True, auto_created=True)
     example_field = models.TextField()
 
     def __str__(self):

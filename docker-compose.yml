@@ -1,14 +1,16 @@
-version: '3'
+version: "3"
 
 services:
   db:
-    image: postgres
+    image: "postgres:latest"
+    env_file: .env
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: make start.docker
+    env_file: .env
     volumes:
       - .:/app
     ports:
-      - "8000:8000"
+      - "${API_PORT}:8000"
     depends_on:
       - db

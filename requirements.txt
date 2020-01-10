@@ -2,3 +2,5 @@ Django>=2.0,<3.0
 psycopg2>=2.7,<3.0
 graphene_django>=2.8.0
 django-cors-headers>=3.2.1
+django_extensions>=2.2.5
+python-dotenv>=0.10.3
