@@ -28,6 +28,8 @@ Install your dependencies for local development `pip install -r requirements.txt
 
 Make sure pylint django is installed `pip install pylint-django`
 
+Use and configure python-dotenv if you need to run this in local outside of docker
+
 ## If installing from scratch
 
 delete the django_graphene folder
